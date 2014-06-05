@@ -24,7 +24,7 @@ Install Japanese fonts :
 
 `apt-get install 'fonts-takao*'`
 
-Add the following to your Xdefaults or Xsession
+Add the following to your Xdefaults or Xressources
 
 ```
 xterm*utf8:               1
@@ -32,4 +32,4 @@ xterm*faceNameDoublesize: TakaoExMincho
 xterm*faceSize:           10
 ```
 
-Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xsession]` to load the changes
+Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes take effect
