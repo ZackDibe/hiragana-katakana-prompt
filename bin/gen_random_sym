@@ -1,8 +1,10 @@
-symbol_list="$HOME/.hiragana-katakana-prompt/files/hk_symbols.txt"
+HK="$HOME/.hiragana-katakana-prompt/"
+
+symbol_list="$HK/files/hk_symbols.txt"
 random_symbol=$(shuf -n1 $symbol_list)
 
 symbol=$(echo $random_symbol | cut -d ' ' -f1)
 sound=$(echo $random_symbol | cut -d ' ' -f2)
 
 echo $symbol
-mpg321 -q $(pwd)'/sounds/'$sound 2> /dev/null &
+mpg321 -q $HK/sounds/$sound 2> /dev/null &
