@@ -1,0 +1,3 @@
+precmd() {
+    PROMPT=$(hirakata)" "
+}
