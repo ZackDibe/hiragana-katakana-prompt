@@ -42,6 +42,7 @@ Download and extract the files in `$HOME/.hiragana-katakana-prompt/`
 ##ZSH and oh-my-zsh
 
 Move the `files` and `sounds` directories in the `hirakata` plugin (located in `oh-my-zsh/plugins`)
+
 Move the `hirakata` plugin to your `.oh-my-zsh/custom/plugins` directory
 
 Add hirakata in your plugins list in the ZSHrc
