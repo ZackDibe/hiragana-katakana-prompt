@@ -1,7 +1,7 @@
-symbol_list="files/hk_symbols.txt"
+symbol_list="$HOME/.oh-my-zsh/files/hk_symbols.txt"
 random_symbol=$(shuf -n1 $symbol_list)
 
 symbol=$(echo $random_symbol | cut -d ' ' -f1)
 sound=$(echo $random_symbol | cut -d ' ' -f2)
 
-mpg321 -q $(pwd)'/sounds/'$sound
+mpg321 -q $HOME/.oh-my-zsh/sounds/$sound
