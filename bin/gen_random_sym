@@ -4,4 +4,5 @@ random_symbol=$(shuf -n1 $symbol_list)
 symbol=$(echo $random_symbol | cut -d ' ' -f1)
 sound=$(echo $random_symbol | cut -d ' ' -f2)
 
-mpg321 -q $HOME/.hiragana-katakana-prompt/sounds/$sound
+echo $symbol
+mpg321 -q $(pwd)'/sounds/'$sound 2> /dev/null &
