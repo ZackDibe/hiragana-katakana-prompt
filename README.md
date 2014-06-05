@@ -1,6 +1,7 @@
 #hiragana-katakana-zshprompt
 
-Add a Hiragan or Katakana in your zsh prompt to make you memorize them.
+Add a Hiragana or Katakana in your zsh prompt, and plays the sound, to make you memorize them.
+The Hiragana or Katakana is changed after each command.
 
 
 ##Dependancies
@@ -38,3 +39,4 @@ Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes tak
 # TO-DO
  * Chose from Hiragana or Katana, or both
  * List of H/K to ignore
+ * Set frequency
