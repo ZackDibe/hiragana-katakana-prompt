@@ -7,4 +7,4 @@ symbol=$(echo $random_symbol | cut -d ' ' -f1)
 sound=$(echo $random_symbol | cut -d ' ' -f2)
 
 echo $symbol
-mpg321 -q $(pwd)'/sounds/'$sound
+mpg321 -q $(pwd)'/sounds/'$sound 2> /dev/null &
