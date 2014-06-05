@@ -35,32 +35,19 @@ xterm*faceSize:           10
 
 Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes take effect
 
-## Install
-
- * Copy the `files`, `sounds` and `hirakata.plugin.zsh` files inside a `hirakata` directory inside your `.oh-my-zsh/custom/plugins/` directory.
- * Copy the `hirakata.zsh-theme` file in your `.oh-my-zsh/themes/` directory.
- * Enable the plugin in your `.zshrc` file:
-```shell
-plugins=(hirakata other-plugins)
-```
-
 # Install
 
 Download and extract the files in `$HOME/.hiragana-katakana-prompt/`
 
 ##ZSH and oh-my-zsh
 
-Add the following to your `~/.zshrc` or in the `precdm()` function if there is already one 
-```
-precmd () {
-    for config_file ($ZSH/lib/*.zsh); do
-        source $config_file
-    done
-    source $ZSH/themes/$ZSH_THEME.zsh-theme
-}
-```
+Move the `files` and `sounds` directories in the `hirakata` plugin (located in `oh-my-zsh/plugins`)
+Move the `hirakata` plugin to your `.oh-my-zsh/custom/plugins` directory
 
-Add the content of `bin/gen_random_sym` in your `oh-my-zsh` theme (_see crunch.zsh-theme_), then place `$SYM ` where you want it to be displayed.
+Add hirakata in your plugins list in the ZSHrc
+```shell
+plugins=(hirakata ...)
+```
 
 
 
@@ -69,3 +56,5 @@ Add the content of `bin/gen_random_sym` in your `oh-my-zsh` theme (_see crunch.z
  * Chose from Hiragana or Katana, or both
  * List of H/K to ignore
  * Set frequency
+ * BASH install
+ * Install script
