@@ -22,7 +22,7 @@ install_omz() {
 }
 
 install_sh() {
-    echo 'HK="$HOME/.hiragana-katakana-prompt' >> $HOME/$1
+    echo 'HK="$HOME/.hiragana-katakana-prompt"' >> $HOME/$1
     echo 'source $HK/bin/gen_random_sym' >> $HOME/$1
     print_ok
 }
