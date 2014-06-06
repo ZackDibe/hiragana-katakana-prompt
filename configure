@@ -1,0 +1,58 @@
+#!/bin/bash
+
+HK="$HOME/.hiragana-katakana-prompt"
+
+GREEN="[0;32m"
+RED="[0;31m"
+CLEAN="[0m"
+
+print_ok() {
+    echo $GREEN"OK"$CLEAN$1
+}
+
+print_ko() {
+    echo $RED"KO"$CLEAN$1
+}
+
+install_omz() {
+    mkdir $ZSH/custom/plugins/hirakata
+    cp -r $HK/files $HK/sounds $ZSH/custom/plugins/hirakata
+    sed -ie 's/\(plugins *= *(\)/\1hirakata /' $HOME/.zshrc
+    print_ok
+}
+
+install_sh() {
+    echo 'HK="$HOME/.hiragana-katakana-prompt' >> $HOME/$1
+    echo 'source $HK/bin/gen_random_sym' >> $HOME/$1
+    print_ok
+}
+
+echo -n "$GREEN[+]$CLEAN Detecting shell... "
+
+if [ -z "$SHELL" ]; then
+    print_ko " - need to set SHELL"
+    exit 1
+fi
+
+sh=$(echo $SHELL | grep -oE "[a-z]+$")
+
+print_ok " - detected $sh"
+
+if [ "$sh" == "zsh" ]; then
+    echo -n "$GREEN[+]$CLEAN Detecting if OMZsh is used... "
+    if [ -z "$ZSH" ]; then
+	print_ko
+	echo -n "$GREEN[+]$CLEAN Installing Hirakata in .zshrc... "
+	install_sh ".zshrc"
+    else
+	print_ok
+	echo -n "$GREEN[+]$CLEAN Installing Hirakata in OMZsh... "
+	install_omz
+    fi
+else if [ "$sh" == "bash" ]; then
+    echo -n "$GREEN[+]$CLEAN Installing Hirakata in .bashrc... "
+    install_sh ".bashrc"
+fi
+fi
+
+echo "$GREEN[+]$CLEAN Done !"
