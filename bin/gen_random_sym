@@ -1,7 +1,7 @@
 HK="$HOME/.hiragana-katakana-prompt/"
 f=$(cat $HK"files/hk_symbols.txt")
 
-hirataka() {
+hirakata() {
     random_symbol=$(echo "$f" | shuf -n1)
 
     symbol=$(echo $random_symbol | cut -d ' ' -f1)
