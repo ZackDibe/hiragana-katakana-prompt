@@ -38,6 +38,14 @@ Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes tak
 
 Download and extract the files in `$HOME/.hiragana-katakana-prompt/`
 
+## Easy install
+
+Run the `configure` script
+
+Add `$(hirakata)` in your prompt
+
+Done !
+
 ##ZSH and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Move the `files` and `sounds` directories in the `hirakata` plugin (located in `oh-my-zsh/plugins`)
@@ -81,5 +89,5 @@ precmd() {
  * Chose from Hiragana or Katana, or both
  * List of H/K to ignore
  * Set frequency
- * BASH install
- * Install script
+ * ~~BASH install~~
+ * ~~Install script~~
