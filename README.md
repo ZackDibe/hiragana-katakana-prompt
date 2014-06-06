@@ -7,7 +7,6 @@ The Hiragana or Katakana is changed after each command.
 ##Dependencies
  * [mp321](###mpg321)
  * [zsh](###Use ZSH)
- * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
  * [japanese-able terminal](###Enable Japanese Characters)
 
 
@@ -39,7 +38,7 @@ Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes tak
 
 Download and extract the files in `$HOME/.hiragana-katakana-prompt/`
 
-##ZSH and oh-my-zsh
+##ZSH and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Move the `files` and `sounds` directories in the `hirakata` plugin (located in `oh-my-zsh/plugins`)
 
@@ -50,10 +49,35 @@ Add hirakata in your plugins list in the ZSHrc
 plugins=(hirakata ...)
 ```
 
+You can now add `$(hirataka)` in your prompt where you want it to be displayed.
 
+Don't forget to use `precmd()` in your theme, like so :
+
+`$ZSH/themes/mawuena.zsh-theme`
+
+```
+precmd() {
+      PROMPT="${CL_BROWN}%(!.#.❆)%{$reset_color%} $CRUNCH_DIR_$(hirakata)$CRUNCH_PROMPT%{$reset_color%}"
+    }
+```
+
+###ZSH only
+
+Add the following in your `$HOME/.zshrc`
+```
+HK="$HOME/.hiragana-katakana-prompt"
+source $HK/bin/gen_random_sym
+```
+
+Wrap your prompt in `precmd()` and add `$(hirataka)` where you want it to be displayed, such as :
+```
+precmd() {
+      PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ $(hirataka)'
+    }
+```
 
 # TO-DO
- * oh-my-zsh plugin
+ * ~~oh-my-zsh plugin~~
  * Chose from Hiragana or Katana, or both
  * List of H/K to ignore
  * Set frequency
