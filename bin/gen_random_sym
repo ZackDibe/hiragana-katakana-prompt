@@ -1,10 +1,12 @@
 HK="$HOME/.hiragana-katakana-prompt/"
+f=$(cat $HK"files/hk_symbols.txt")
 
-symbol_list="$HK/files/hk_symbols.txt"
-random_symbol=$(shuf -n1 $symbol_list)
+hirataka() {
+    random_symbol=$(echo "$f" | shuf -n1)
 
-symbol=$(echo $random_symbol | cut -d ' ' -f1)
-sound=$(echo $random_symbol | cut -d ' ' -f2)
+    symbol=$(echo $random_symbol | cut -d ' ' -f1)
+    sound=$(echo $random_symbol | cut -d ' ' -f2)
 
-echo $symbol
-mpg321 -q $HK/sounds/$sound 2> /dev/null &
+    (mpg321 -q $HK/sounds/$sound & ) > /dev/null 2>&1
+    echo $symbol
+}
