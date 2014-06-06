@@ -5,8 +5,8 @@ The Hiragana or Katakana is changed after each command.
 
 
 ##Dependencies
- * [mp321](###mpg321)
- * [zsh](###Use ZSH)
+ * [mpg321](#mpg321)
+ * [zsh](#Use ZSH)
  * [japanese-able terminal](###Enable Japanese Characters)
 
 
