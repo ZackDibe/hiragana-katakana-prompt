@@ -6,7 +6,7 @@ hirakata() {
 
     symbol=$(echo $random_symbol | cut -d ' ' -f1)
     sound=$(echo $random_symbol | cut -d ' ' -f2)
-    romanji=$(echo $sound | cut-d '.' -f1)
+    romanji=$(echo $sound | cut -d '.' -f1)
 
     (mpg321 -q $HK/sounds/$sound & ) > /dev/null 2>&1
     echo $symbol
