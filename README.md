@@ -9,17 +9,12 @@ The Hiragana or Katakana is changed after each command.
 
 ##Dependencies
  * [mpg321](https://github.com/Mawu3n4/hiragana-katakana-prompt#mpg321)
- * [zsh](https://github.com/Mawu3n4/hiragana-katakana-prompt#use-zsh)
  * [japanese-able terminal](https://github.com/Mawu3n4/hiragana-katakana-prompt#enable-japanese-characters)
 
 
 ###mpg321
 
 `apt-get install mpg321`
-
-###Use ZSH
-
-`chsh --shell /bin/zsh`
 
 ###Enable Japanese Characters
 
@@ -107,7 +102,7 @@ Only select an Hiragana characters
 
 `$(hirakata katakana)`
 
-Only select an Katakana characters
+Only select a Katakana characters
 
 
 ## TO-DO
