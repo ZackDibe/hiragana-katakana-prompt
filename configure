@@ -15,7 +15,9 @@ print_ko() {
 }
 
 install_omz() {
-    mkdir $ZSH/custom/plugins/hirakata
+    mkdir $ZSH/custom 2>/dev/null
+    mkdir $ZSH/custom/plugins 2>/dev/null
+    mkdir $ZSH/custom/plugins/hirakata 2>/dev/null
     cp -r $HK/files $HK/sounds $ZSH/custom/plugins/hirakata
     sed -ie 's/\(plugins *= *(\)/\1hirakata /' $HOME/.zshrc
     print_ok

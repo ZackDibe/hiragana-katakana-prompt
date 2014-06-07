@@ -1,17 +1,33 @@
 HK="$HOME/.hiragana-katakana-prompt/"
-f=$(cat $HK"files/hk_symbols.txt")
+fh=$(cat $HK"files/hira.txt")
+fk=$(cat $HK"files/kata.txt")
 
 hirakata() {
-    random_symbol=$(echo "$f" | shuf -n1)
+    random_symbol=$(echo "$fh\n$fk" | shuf -n1)
+    romaji=0
+
+    for arg in "$@"
+    do
+	case "$arg" in
+	    "romaji")
+		romaji=1
+		;;
+	    "hiragana")
+		random_symbol=$(echo "$fh" | shuf -n1)
+		;;
+	    "katakana")
+		random_symbol=$(echo "$fk" | shuf -n1)
+		;;
+	esac
+    done
 
     symbol=$(echo $random_symbol | cut -d ' ' -f1)
     sound=$(echo $random_symbol | cut -d ' ' -f2)
-    romaji=$(echo $sound | cut -d '.' -f1 | cut -d '_' -f1)
-
     (mpg321 -q $HK/sounds/$sound & ) > /dev/null 2>&1
     echo -n $symbol
 
-    if [ "$1" == "true" ]; then
-       echo -n " ($romaji)"
+    if [ $romaji -eq 1 ]; then
+	romaji=$(echo $sound | cut -d '.' -f1)
+	echo -n " ($romaji)"
     fi
 }

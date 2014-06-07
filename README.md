@@ -3,6 +3,9 @@
 Add a Hiragana or Katakana in your zsh prompt, and plays the sound, to make you memorize them.
 The Hiragana or Katakana is changed after each command.
 
+* Dependencies
+* Installation
+* Options
 
 ##Dependencies
  * [mpg321](#mpg321)
@@ -34,11 +37,11 @@ xterm*faceSize:           10
 
 Run `xrdb -merge [$HOME/.Xdefaults|$HOME/.Xressources]` to have your changes take effect
 
-# Install
+## Install
 
 Download and extract the files in `$HOME/.hiragana-katakana-prompt/`
 
-## Easy install
+### Easy install
 
 Run the `configure` script
 
@@ -46,7 +49,7 @@ Add `$(hirakata)` in your prompt
 
 Done !
 
-##ZSH and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+### ZSH and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Move the `files` and `sounds` directories in the `hirakata` plugin (located in `oh-my-zsh/plugins`)
 
@@ -69,7 +72,7 @@ precmd() {
     }
 ```
 
-###ZSH only
+### ZSH only
 
 Add the following in your `$HOME/.zshrc`
 ```
@@ -84,9 +87,32 @@ precmd() {
     }
 ```
 
-# TO-DO
+## Options
+
+Options can be combined
+
+### romaji
+
+`$(hirakata romaji)`
+
+Displays the romaji translation right next to the character
+
+### hiragana
+
+`$(hirakata hiragana)`
+
+Only select an Hiragana characters
+
+### katakana
+
+`$(hirakata katakana)`
+
+Only select an Katakana characters
+
+
+## TO-DO
  * ~~oh-my-zsh plugin~~
- * Chose from Hiragana or Katana, or both
+ * ~~Chose from Hiragana or Katana, or both~~
  * List of H/K to ignore
  * Set frequency
  * ~~BASH install~~
