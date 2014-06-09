@@ -96,13 +96,13 @@ Displays the romaji translation right next to the character
 
 `$(hirakata hiragana)`
 
-Only select an Hiragana characters
+Only select an Hiragana character
 
 ### katakana
 
 `$(hirakata katakana)`
 
-Only select a Katakana characters
+Only select a Katakana character
 
 
 ## TO-DO
