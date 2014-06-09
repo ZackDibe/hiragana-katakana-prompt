@@ -3,23 +3,18 @@
 Add a Hiragana or Katakana in your zsh prompt, and plays the sound, to make you memorize them.
 The Hiragana or Katakana is changed after each command.
 
-* Dependencies
-* Installation
-* Options
+* [Dependencies](https://github.com/Mawu3n4/hiragana-katakana-prompt#dependencies)
+* [Installation](https://github.com/Mawu3n4/hiragana-katakana-prompt#install)
+* [Options](https://github.com/Mawu3n4/hiragana-katakana-prompt#options)
 
 ##Dependencies
- * [mpg321](#mpg321)
- * [zsh](#Use ZSH)
- * [japanese-able terminal](###Enable Japanese Characters)
+ * [mpg321](https://github.com/Mawu3n4/hiragana-katakana-prompt#mpg321)
+ * [japanese-able terminal](https://github.com/Mawu3n4/hiragana-katakana-prompt#enable-japanese-characters)
 
 
 ###mpg321
 
 `apt-get install mpg321`
-
-###Use ZSH
-
-`chsh --shell /bin/zsh`
 
 ###Enable Japanese Characters
 
@@ -107,13 +102,13 @@ Displays the romaji translation right next to the character
 
 `$(hirakata hiragana)`
 
-Only select an Hiragana characters
+Only select an Hiragana character
 
 ### katakana
 
 `$(hirakata katakana)`
 
-Only select an Katakana characters
+Only select a Katakana character
 
 
 ## TO-DO
