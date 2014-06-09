@@ -91,6 +91,12 @@ precmd() {
 
 Options can be combined
 
+### mute
+
+`$(hirakata mute)`
+
+Don't play the sound
+
 ### romaji
 
 `$(hirakata romaji)`
